@@ -180,40 +180,93 @@
                             <label for="occupation">Occupation (if applicable)</label>
                             <input type="text" class="form-control" id="occupation" placeholder="Enter occupation">
                         </div>
+                        <div class="form-group">
+                            <label for="salary">Monthly Salary (if employed)</label>
+                            <input type="number" class="form-control" id="salary" placeholder="Enter monthly salary">
+                        </div>
+                        <div class="form-group">
+                            <label>Are you currently operating a business?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="business-status" id="yes-business" value="yes">
+                                <label class="form-check-label" for="yes-business">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="business-status" id="no-business" value="no">
+                                <label class="form-check-label" for="no-business">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div id="business-details" class="form-group" style="display: none;">
+                            <label for="business-sector">State the Sector of Business</label>
+                            <input type="text" class="form-control" id="business-sector" placeholder="Enter business sector">
+                        </div>
+                        <div id="number-of-employees" class="form-group" style="display: none;">
+                            <label for="employees">Number of Employees</label>
+                            <input type="number" class="form-control" id="employees" placeholder="Enter number of employees">
+                        </div>
+                        <div class="form-group">
+                            <label>Have you acquired any business training before?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="training-status" id="yes-training" value="yes">
+                                <label class="form-check-label" for="yes-training">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="training-status" id="no-training" value="no">
+                                <label class="form-check-label" for="no-training">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div id="training-program" class="form-group" style="display: none;">
+                            <label for="program">State the Program that Offered the Business Training</label>
+                            <input type="text" class="form-control" id="program" placeholder="Enter training program">
+                        </div>
+                        <div id="skills-obtained" class="form-group" style="display: none;">
+                            <label for="skills">State Skills Obtained from the Training</label>
+                            <input type="text" class="form-control" id="skills" placeholder="Enter skills obtained">
+                        </div>
                     </form>
                 </div>
+
 
                 <div id="project-specific" class="form-section" style="display: none;">
                     <h2><i class="fas fa-project-diagram"></i> Project-Specific Information</h2>
                     <form>
                         <div class="form-group">
-                            <label for="project-title">Project Title</label>
-                            <input type="text" class="form-control" id="project-title" placeholder="Enter project title">
+                            <label for="project-title">How did you know about GROW Project?</label>
+                            <input type="text" class="form-control" id="project-title" placeholder="Enter how you got to know about this project">
                         </div>
                         <div class="form-group">
-                            <label for="project-description">Project Description</label>
-                            <textarea class="form-control" id="project-description" rows="4" placeholder="Describe your project"></textarea>
+                            <label for="project-description">Reason for applying for this program:</label>
+                            <textarea class="form-control" id="project-description" rows="4" placeholder="enter reason for applying for this program"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="project-duration">Project Duration (in months)</label>
-                            <input type="number" class="form-control" id="project-duration" placeholder="Enter project duration">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-budget">Estimated Budget</label>
-                            <input type="number" class="form-control" id="project-budget" placeholder="Enter estimated budget">
-                        </div>
+                      
                     </form>
                 </div>
 
                 <div id="confirmation" class="form-section" style="display: none;">
                     <h2><i class="fas fa-check-circle"></i> Confirmation</h2>
-                    <p>Please review your information before submitting the form.</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="declaration">I, <input type="text" class="form-control d-inline-block w-auto" id="declaration-name" placeholder="Enter your name">, declare that the information provided above is true and accurate to the best of my knowledge.</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                    </form>
+                    
                     <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
                 </div>
 
                 <div class="form-navigation mt-4">
                     <button type="button" class="btn btn-outline-secondary prev-btn" style="display: none;">Previous</button>
-                    <button type="button" class="btn btn-success next-btn">Continue</button>
+                    <button type="button" class="btn btn-success next-btn">Submit all and finish</button>
                 </div>
             </div>
         </div>
