@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form for Business Development (1B)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="grow_logo.jpg" width="80" height="60" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: orange;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">How to Apply</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-warning text-white" href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </header>
+    <main role="main" class="container mt-5 pt-5">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#personal-info">
+                                <i class="fas fa-user"></i> Personal Information
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#next-of-kin">
+                                <i class="fas fa-users"></i> Next of Kin Information
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education-employment">
+                                <i class="fas fa-graduation-cap"></i> Education and Employment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#project-specific">
+                                <i class="fas fa-project-diagram"></i> Project-Specific Information
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#confirmation">
+                                <i class="fas fa-check-circle"></i> Confirmation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div id="personal-info" class="form-section">
+                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="surname">Surname</label>
+                                <input type="text" class="form-control" id="surname" placeholder="Enter surname">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="other-names">Other Names</label>
+                                <input type="text" class="form-control" id="other-names" placeholder="Enter other names">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" placeholder="Enter age">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="marital-status">Marital Status</label>
+                                <select class="form-control" id="marital-status">
+                                    <option value="" disabled selected>Select marital status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Are you a Ugandan or a refugee?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="ugandan" value="ugandan">
+                                <label class="form-check-label" for="ugandan">
+                                    Ugandan
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="refugee" value="refugee">
+                                <label class="form-check-label" for="refugee">
+                                    Refugee
+                                </label>
+                            </div>
+                        </div>
+                        <div id="refugee-info" class="form-group" style="display: none;">
+                            <label for="refugee-number">Enter Refugee Number</label>
+                            <input type="text" class="form-control" id="refugee-number" placeholder="Enter refugee number">
+                        </div>
+                        <div id="nin-info" class="form-group" style="display: none;">
+                            <label for="nin">Enter NIN</label>
+                            <input type="text" class="form-control" id="nin" placeholder="Enter NIN">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="next-of-kin" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-users"></i> Next of Kin Information</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="kin-name">Name</label>
+                            <input type="text" class="form-control" id="kin-name" placeholder="Enter next of kin's name">
+                        </div>
+                        <div class="form-group">
+                            <label for="kin-phone">Telephone Number</label>
+                            <input type="tel" class="form-control" id="kin-phone" placeholder="Enter telephone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="kin-alternative-phone">Alternative Number (Optional)</label>
+                            <input type="tel" class="form-control" id="kin-alternative-phone" placeholder="Enter alternative number">
+                        </div>
+                        <div class="form-group">
+                            <label for="kin-relationship">Relationship</label>
+                            <input type="text" class="form-control" id="kin-relationship" placeholder="Enter relationship">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="education-employment" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-graduation-cap"></i> Education and Employment</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="education">Highest Level of Education</label>
+                            <input type="text" class="form-control" id="education" placeholder="Enter highest level of education">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution">Name of the Institution Last Attended</label>
+                            <input type="text" class="form-control" id="institution" placeholder="Enter name of institution">
+                        </div>
+                        <div class="form-group">
+                            <label for="employment-status">Current Employment Status</label>
+                            <select class="form-control" id="employment-status">
+                                <option value="" disabled selected>Select employment status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self-employed">Self-employed</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Occupation (if applicable)</label>
+                            <input type="text" class="form-control" id="occupation" placeholder="Enter occupation">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Monthly Salary (if employed)</label>
+                            <input type="number" class="form-control" id="salary" placeholder="Enter monthly salary">
+                        </div>
+                        <div class="form-group">
+                            <label>Are you currently operating a business?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="business-status" id="yes-business" value="yes">
+                                <label class="form-check-label" for="yes-business">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="business-status" id="no-business" value="no">
+                                <label class="form-check-label" for="no-business">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div id="business-details" class="form-group" style="display: none;">
+                            <label for="business-sector">State the Sector of Business</label>
+                            <input type="text" class="form-control" id="business-sector" placeholder="Enter business sector">
+                        </div>
+                        <div id="number-of-employees" class="form-group" style="display: none;">
+                            <label for="employees">Number of Employees</label>
+                            <input type="number" class="form-control" id="employees" placeholder="Enter number of employees">
+                        </div>
+                        <div class="form-group">
+                            <label>Have you acquired any business training before?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="training-status" id="yes-training" value="yes">
+                                <label class="form-check-label" for="yes-training">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="training-status" id="no-training" value="no">
+                                <label class="form-check-label" for="no-training">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div id="training-program" class="form-group" style="display: none;">
+                            <label for="program">State the Program that Offered the Business Training</label>
+                            <input type="text" class="form-control" id="program" placeholder="Enter training program">
+                        </div>
+                        <div id="skills-obtained" class="form-group" style="display: none;">
+                            <label for="skills">State Skills Obtained from the Training</label>
+                            <input type="text" class="form-control" id="skills" placeholder="Enter skills obtained">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="project-specific" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-project-diagram"></i> Project-Specific Information</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="how-did-you-know">How did you know about the GROW Project?</label>
+                            <input type="text" class="form-control" id="how-did-you-know" placeholder="Enter how you heard about the project">
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for Applying for this Program</label>
+                            <textarea class="form-control" id="reason" rows="3" placeholder="Enter reason for applying"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="confirmation" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-check-circle"></i> Confirmation</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="declaration">I, <input type="text" class="form-control d-inline-block w-auto" id="declaration-name" placeholder="Enter your name">, declare that the information provided above is true and accurate to the best of my knowledge.</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

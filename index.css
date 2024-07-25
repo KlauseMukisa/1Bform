@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #f8f9fa;
+
+}
+
+.navbar {
+    border-bottom: 2px solid #f0ad4e;
+}
+
+.navbar-brand {
+    color: #228B22;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.nav-link:hover {
+    color: #228B22;
+}
+
+.sidebar {
+    border-right: 1px solid #f0ad4e;
+    padding: 20px 10px;
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+}
+
+.sidebar .nav-link.active {
+    font-weight: bold;
+}
+
+.form-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    border-bottom: 2px solid #f0ad4e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #ec971f;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #f0ad4e;
+    box-shadow: none;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+}
+
+.form-control:focus::placeholder {
+    color: transparent;
+}
