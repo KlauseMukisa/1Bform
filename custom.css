@@ -14,7 +14,7 @@ body{
 
 .form-control.border-bottom {
     border: none;
-    border-bottom: 1px solid #ced4da;
+    border-bottom: 2px solid orange;
     border-radius: 0;
     box-shadow: none;
 }

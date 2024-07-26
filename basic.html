@@ -8,7 +8,7 @@
     <title>Application Form for Business Development (1B)</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="basic.css">
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -22,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="profile.html">My Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="apply.html">How to Apply</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-warning text-white" href="login.html">Log Out</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-warning text-white" href="index.html">Log Out</a></li>
             </ul>
         </div>
     </header>
@@ -68,7 +68,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="surname">Surname</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Enter surname">
+                                <input type="text" class="form-control" id="surname" placeholder="Enter surname"required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="other-names">Other Names</label>
@@ -161,7 +161,15 @@
                     <form>
                         <div class="form-group">
                             <label for="education">Highest Level of Education</label>
-                            <input type="text" class="form-control" id="education" placeholder="Enter highest level of education">
+                            <select class="form-control" id="education">
+                                <option value="primary">Primary</option>
+                                <option value="secondary">Secondary</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="bachelor">Bachelor's</option>
+                                <option value="master">Master's</option>
+                                <option value="phd">PhD</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="institution">Name of the Institution Last Attended</label>
@@ -275,7 +283,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="index.js"></script>
+    <script src="basic.js"></script>
     <script>
         $(document).ready(function () {
             var sections = $('.form-section');
