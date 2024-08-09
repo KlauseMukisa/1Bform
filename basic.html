@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="basic.css">
+    <style>
+        .progress-bar-container {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            height: 20px;
+            line-height: 20px;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: orange;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -26,32 +45,36 @@
     </header>
 
     <main role="main" class="container mt-5 pt-5">
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar" style="width: 0%;">0% Complete</div>
+        </div>
+        
         <div class="row">
             <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#background-info">
-                                <i class="fas fa-user"></i> Background Information
+                            <a class="nav-link" href="#background-info" data-section="0">
+                                <i class="fas fa-info-circle"></i> Background Information
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#physical-address">
+                            <a class="nav-link" href="#physical-address" data-section="1">
                                 <i class="fas fa-map-marker-alt"></i> Physical Address
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#business-info">
-                                <i class="fas fa-briefcase"></i> Business Information
+                            <a class="nav-link" href="#business-info" data-section="2">
+                                <i class="fas fa-business-time"></i> Business Information
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#core-business-training">
-                                <i class="fas fa-cogs"></i> Core Business Training
+                            <a class="nav-link" href="#training" data-section="3">
+                                <i class="fas fa-chalkboard-teacher"></i> Core Business Training
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#confirmation">
+                            <a class="nav-link" href="#confirmation" data-section="4">
                                 <i class="fas fa-check-circle"></i> Confirmation
                             </a>
                         </li>
@@ -61,21 +84,21 @@
 
             <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div id="background-info" class="form-section">
-                    <h2><i class="fas fa-user"></i> Background Information</h2>
+                    <h2><i class="fas fa-info-circle"></i> Background Information</h2>
                     <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="surname">Surname</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Enter surname" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="other-names">Other Names</label>
-                                <input type="text" class="form-control" id="other-names" placeholder="Enter other names">
-                            </div>
+                        <!-- Background Information Fields -->
+                        <!-- Full Name, Telephone Number, Age, Gender, etc. -->
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input type="text" class="form-control" id="surname" placeholder="Enter surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="other-names">Other Names</label>
+                            <input type="text" class="form-control" id="other-names" placeholder="Enter other names">
                         </div>
                         <div class="form-group">
                             <label for="phone-number">Telephone Number(s)</label>
-                            <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number">
+                            <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number(s)">
                         </div>
                         <div class="form-group">
                             <label for="age">Age</label>
@@ -117,7 +140,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address (Optional)</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email address">
                         </div>
                         <div class="form-group">
                             <label>Nationality</label>
@@ -130,56 +153,51 @@
                                 <label class="form-check-label" for="refugee">Refugee</label>
                             </div>
                         </div>
-                        <div id="ugandan-info" class="form-group" style="display: none;">
-                            <label for="nin">National Identification Number (NIN)</label>
+                        <div id="nin-info" class="form-group" style="display: none;">
+                            <label for="nin">Enter National Identification Number (NIN)</label>
                             <input type="text" class="form-control" id="nin" placeholder="Enter NIN">
                         </div>
-                        <div id="refugee-info" class="form-group" style="display: none;">
-                            <label for="refugee-number">Refugee Number</label>
+                        <div id="refugee-number-info" class="form-group" style="display: none;">
+                            <label for="refugee-number">Enter Refugee Number</label>
                             <input type="text" class="form-control" id="refugee-number" placeholder="Enter refugee number">
                         </div>
                     </form>
                 </div>
 
-                <div id="physical-address" class="form-section">
+                <div id="physical-address" class="form-section" style="display: none;">
                     <h2><i class="fas fa-map-marker-alt"></i> Physical Address</h2>
                     <form>
-                        <div id="refugee-address" class="form-group" style="display: none;">
-                            <label for="refugee-settlement">Refugee Settlement</label>
+                        <!-- Physical Address Fields -->
+                        <!-- Address for refugees and Ugandans -->
+                        <div id="refugee-settlement-info" class="form-group" style="display: none;">
+                            <label for="refugee-settlement">Enter Refugee Settlement</label>
                             <input type="text" class="form-control" id="refugee-settlement" placeholder="Enter refugee settlement">
                         </div>
-                        <div id="ugandan-address" class="form-group" style="display: none;">
-                            <h4>Full Residential Address/Location</h4>
-                            <div class="form-group">
-                                <label for="district">District/City</label>
-                                <input type="text" class="form-control" id="district" placeholder="Enter district/city">
-                            </div>
-                            <div class="form-group">
-                                <label for="subcounty">Subcounty/Division</label>
-                                <input type="text" class="form-control" id="subcounty" placeholder="Enter subcounty/division">
-                            </div>
-                            <div class="form-group">
-                                <label for="parish">Parish/Ward</label>
-                                <input type="text" class="form-control" id="parish" placeholder="Enter parish/ward">
-                            </div>
-                            <div class="form-group">
-                                <label for="village">Village/Cell/Zone</label>
-                                <input type="text" class="form-control" id="village" placeholder="Enter village/cell/zone">
-                            </div>
+                        <div id="ugandan-address-info" class="form-group" style="display: none;">
+                            <label for="district">District/City</label>
+                            <input type="text" class="form-control" id="district" placeholder="Enter district/city">
+                            <label for="subcounty">Subcounty/Division</label>
+                            <input type="text" class="form-control" id="subcounty" placeholder="Enter subcounty/division">
+                            <label for="parish">Parish/Ward</label>
+                            <input type="text" class="form-control" id="parish" placeholder="Enter parish/ward">
+                            <label for="village">Village/Cell/Zone</label>
+                            <input type="text" class="form-control" id="village" placeholder="Enter village/cell/zone">
                         </div>
                     </form>
                 </div>
 
-                <div id="business-info" class="form-section">
-                    <h2><i class="fas fa-briefcase"></i> Business Information</h2>
+                <div id="business-info" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-business-time"></i> Business Information</h2>
                     <form>
+                        <!-- Business Information Fields -->
+                        <!-- Name of business, Year of establishment, etc. -->
                         <div class="form-group">
                             <label for="business-name">Name of the Business</label>
                             <input type="text" class="form-control" id="business-name" placeholder="Enter business name">
                         </div>
                         <div class="form-group">
-                            <label for="year-establishment">Year of Business Establishment</label>
-                            <input type="date" class="form-control" id="year-establishment">
+                            <label for="business-year">Year of Business Establishment</label>
+                            <input type="date" class="form-control" id="business-year">
                         </div>
                         <div class="form-group">
                             <label for="business-type">Type of Business</label>
@@ -228,44 +246,44 @@
                         <div class="form-group">
                             <label>Annual Revenue Generated by the Business</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue1" value="< 1,000,000">
-                                <label class="form-check-label" for="revenue1">Less than 1,000,000</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="below-1m" value="< 1,000,000">
+                                <label class="form-check-label" for="below-1m">Below 1,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue2" value="1,000,000-5m">
-                                <label class="form-check-label" for="revenue2">1,000,000-5M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="1m-5m" value="1,000,000-5m">
+                                <label class="form-check-label" for="1m-5m">1,000,000 - 5,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue3" value="5M-10M">
-                                <label class="form-check-label" for="revenue3">5M-10M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="5m-10m" value="5,000,000-10m">
+                                <label class="form-check-label" for="5m-10m">5,000,000 - 10,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue4" value="10M-20M">
-                                <label class="form-check-label" for="revenue4">10M-20M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="10m-20m" value="10,000,000-20m">
+                                <label class="form-check-label" for="10m-20m">10,000,000 - 20,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue5" value="20M-50M">
-                                <label class="form-check-label" for="revenue5">20M-50M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="20m-50m" value="20,000,000-50m">
+                                <label class="form-check-label" for="20m-50m">20,000,000 - 50,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue6" value="50M-100M">
-                                <label class="form-check-label" for="revenue6">50M-100M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="50m-100m" value="50,000,000-100m">
+                                <label class="form-check-label" for="50m-100m">50,000,000 - 100,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue7" value="100M-360M">
-                                <label class="form-check-label" for="revenue7">100M-360M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="100m-360m" value="100,000,000-360m">
+                                <label class="form-check-label" for="100m-360m">100,000,000 - 360,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue8" value="Above 360M">
-                                <label class="form-check-label" for="revenue8">Above 360M</label>
+                                <input class="form-check-input" type="radio" name="revenue" id="above-360m" value="Above 360m">
+                                <label class="form-check-label" for="above-360m">Above 360,000,000</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="business-location">Business Location/Address</label>
-                            <input type="text" class="form-control" id="business-location" placeholder="Enter business location/address">
+                            <label for="business-address">Business Location/Address</label>
+                            <input type="text" class="form-control" id="business-address" placeholder="Enter business address">
                         </div>
                         <div class="form-group">
-                            <label>Is Your Business Registered?</label>
+                            <label>Is your business registered?</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="business-registered" id="registered-yes" value="yes">
                                 <label class="form-check-label" for="registered-yes">Yes</label>
@@ -275,134 +293,180 @@
                                 <label class="form-check-label" for="registered-no">No</label>
                             </div>
                         </div>
-                        <div id="registration-number" class="form-group" style="display: none;">
-                            <label for="reg-number">Registration Number</label>
-                            <input type="text" class="form-control" id="reg-number" placeholder="Enter registration number">
+                        <div id="registration-number-info" class="form-group" style="display: none;">
+                            <label for="registration-number">Enter Registration Number</label>
+                            <input type="text" class="form-control" id="registration-number" placeholder="Enter registration number">
                         </div>
-                        <div id="reason-not-registered" class="form-group" style="display: none;">
-                            <label for="registration-reason">Reason for Not Registering</label>
+                        <div id="registration-reason-info" class="form-group" style="display: none;">
+                            <label for="registration-reason">Enter Reason for Not Registering</label>
                             <textarea class="form-control" id="registration-reason" rows="3" placeholder="Enter reason for not registering"></textarea>
                         </div>
                     </form>
                 </div>
 
-                <div id="core-business-training" class="form-section">
-                    <h2><i class="fas fa-cogs"></i> Core Business Training</h2>
+                <div id="training" class="form-section" style="display: none;">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Core Business Training</h2>
                     <form>
+                        <!-- Training Information Fields -->
+                        <!-- Challenges faced, Specific Areas of Interest, etc. -->
                         <div class="form-group">
                             <label>Challenges Faced in Business</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="finance" value="finance">
-                                <label class="form-check-label" for="finance">Access to Finance</label>
+                                <input class="form-check-input" type="checkbox" id="access-finance" value="Access to Finance">
+                                <label class="form-check-label" for="access-finance">Access to Finance</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="market-access" value="market-access">
+                                <input class="form-check-input" type="checkbox" id="market-access" value="Market Access">
                                 <label class="form-check-label" for="market-access">Market Access</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="technology" value="technology">
-                                <label class="form-check-label" for="technology">Technology Adoption</label>
+                                <input class="form-check-input" type="checkbox" id="tech-adoption" value="Technology Adoption">
+                                <label class="form-check-label" for="tech-adoption">Technology Adoption</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="business-skills" value="business-skills">
+                                <input class="form-check-input" type="checkbox" id="business-skills" value="Business Skills">
                                 <label class="form-check-label" for="business-skills">Business Skills</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="regulatory-compliance" value="regulatory-compliance">
-                                <label class="form-check-label" for="regulatory-compliance">Regulatory Compliance</label>
+                                <input class="form-check-input" type="checkbox" id="reg-compliance" value="Regulatory Compliance">
+                                <label class="form-check-label" for="reg-compliance">Regulatory Compliance</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="business-challenges" id="other-challenges" value="other">
-                                <label class="form-check-label" for="other-challenges">Other</label>
-                                <input type="text" class="form-control mt-2" id="other-challenges-text" placeholder="Specify other challenges">
+                                <input class="form-check-input" type="checkbox" id="other-challenges" value="Other">
+                                <label class="form-check-label" for="other-challenges">Other: <input type="text" class="form-control" id="other-challenges-text"></label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Specific Areas of Interest for Training (Course Modules)</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="mindset" value="mindset">
-                                <label class="form-check-label" for="mindset">Entrepreneurial Mindset</label>
+                                <input class="form-check-input" type="checkbox" id="entrepreneurial-mindset" value="Entrepreneurial Mindset">
+                                <label class="form-check-label" for="entrepreneurial-mindset">Entrepreneurial Mindset</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="marketing" value="marketing">
-                                <label class="form-check-label" for="marketing">Marketing Strategies</label>
+                                <input class="form-check-input" type="checkbox" id="personal-development" value="Personal Development">
+                                <label class="form-check-label" for="personal-development">Personal Development</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="operations" value="operations">
-                                <label class="form-check-label" for="operations">Operations Management</label>
+                                <input class="form-check-input" type="checkbox" id="mobile-phone" value="The Mobile Phone and Your Business">
+                                <label class="form-check-label" for="mobile-phone">The Mobile Phone and Your Business</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="finance-management" value="finance-management">
-                                <label class="form-check-label" for="finance-management">Financial Management</label>
+                                <input class="form-check-input" type="checkbox" id="managing-money" value="Managing Your Money">
+                                <label class="form-check-label" for="managing-money">Managing Your Money</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="business-planning" value="business-planning">
-                                <label class="form-check-label" for="business-planning">Business Planning</label>
+                                <input class="form-check-input" type="checkbox" id="managing-business" value="Managing Your Business Activities">
+                                <label class="form-check-label" for="managing-business">Managing Your Business Activities</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="digital-skills" value="digital-skills">
-                                <label class="form-check-label" for="digital-skills">Digital Skills</label>
+                                <input class="form-check-input" type="checkbox" id="business-formalization" value="Business Formalization">
+                                <label class="form-check-label" for="business-formalization">Business Formalization</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="training-modules" id="other-modules" value="other">
-                                <label class="form-check-label" for="other-modules">Other</label>
-                                <input type="text" class="form-control mt-2" id="other-modules-text" placeholder="Specify other modules">
+                                <input class="form-check-input" type="checkbox" id="gender-norms" value="Gender Norms and Your Business">
+                                <label class="form-check-label" for="gender-norms">Gender Norms and Your Business</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="connecting-customers" value="Connecting with Your Customers">
+                                <label class="form-check-label" for="connecting-customers">Connecting with Your Customers</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="planning-future" value="Planning for the Future">
+                                <label class="form-check-label" for="planning-future">Planning for the Future</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sustainability" value="Sustainability">
+                                <label class="form-check-label" for="sustainability">Sustainability</label>
                             </div>
                         </div>
                     </form>
                 </div>
 
-                <div id="confirmation" class="form-section">
+                <div id="confirmation" class="form-section" style="display: none;">
                     <h2><i class="fas fa-check-circle"></i> Confirmation</h2>
                     <form>
+                        <!-- Confirmation Fields -->
                         <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="confirmation-check" required>
-                                <label class="form-check-label" for="confirmation-check">
-                                    I declare that the information provided is true and accurate.
-                                </label>
-                            </div>
+                            <label for="declaration">I, <input type="text" class="form-control d-inline-block w-auto" id="declaration-name" placeholder="Enter your name">, declare that the information provided above is true and accurate to the best of my knowledge.</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
                     </form>
+                    
+                    <button type="button" class="btn btn-primary" id="submit-btn">Submit all and finish</button>
+                </div>
+
+                <div class="form-navigation mt-4">
+                    <button type="button" class="btn btn-outline-secondary prev-btn" style="display: none;">Previous</button>
+                    <button type="button" class="btn btn-success next-btn">Continue</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="basic.js"></script>
+    <script src="navigation.js"></script>
+    <script src="validation.js"></script>
     <script>
-        // JavaScript to handle form visibility based on nationality
-        document.querySelectorAll('input[name="nationality"]').forEach(radio => {
-            radio.addEventListener('change', () => {
-                document.getElementById('ugandan-info').style.display = document.getElementById('ugandan').checked ? 'block' : 'none';
-                document.getElementById('refugee-info').style.display = document.getElementById('refugee').checked ? 'block' : 'none';
-                document.getElementById('refugee-address').style.display = document.getElementById('refugee').checked ? 'block' : 'none';
-                document.getElementById('ugandan-address').style.display = document.getElementById('ugandan').checked ? 'block' : 'none';
-            });
-        });
+        $(document).ready(function () {
+            var sections = $('.form-section');
+            var currentSectionIndex = 0;
 
-        document.querySelectorAll('input[name="business-registered"]').forEach(radio => {
-            radio.addEventListener('change', () => {
-                document.getElementById('registration-number').style.display = document.getElementById('registered-yes').checked ? 'block' : 'none';
-                document.getElementById('reason-not-registered').style.display = document.getElementById('registered-no').checked ? 'block' : 'none';
-            });
-        });
+            function showSection(index) {
+                sections.hide();
+                $(sections[index]).show();
+                $('.prev-btn').toggle(index > 0);
+                $('.next-btn').toggle(index < sections.length - 1);
+                $('#submit-btn').toggle(index === sections.length - 1);
+                updateProgress(index);
+                updateSidebar(index);
+            }
 
-        // Handle SweetAlert for form submission
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            Swal.fire({
-                title: 'Form Submitted',
-                text: 'Your application has been submitted successfully!',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                // Redirect or move to next section if needed
+            function updateProgress(index) {
+                var percentage = ((index + 1) / sections.length) * 100;
+                $('#progress-bar').css('width', percentage + '%').text(Math.round(percentage) + '% Complete');
+            }
+
+            function updateSidebar(index) {
+                $('.nav-link').removeClass('active');
+                $('.nav-link[data-section="' + index + '"]').addClass('active');
+            }
+
+            function showAlertAndNext() {
+                Swal.fire({
+                    title: 'Section Completed!',
+                    text: 'Proceeding to the next section.',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        currentSectionIndex++;
+                        showSection(currentSectionIndex);
+                    }
+                });
+            }
+
+            $('.next-btn').click(showAlertAndNext);
+
+            $('.prev-btn').click(function () {
+                if (currentSectionIndex > 0) {
+                    currentSectionIndex--;
+                    showSection(currentSectionIndex);
+                }
             });
+
+            $('.nav-link').click(function () {
+                var index = $(this).data('section');
+                currentSectionIndex = index;
+                showSection(currentSectionIndex);
+            });
+
+            showSection(currentSectionIndex);
         });
     </script>
 </body>
