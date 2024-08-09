@@ -29,23 +29,3 @@ body{
 .card.mb-5 {
     margin-bottom: 5rem !important;
 }
-
-.btn-success {
-    background-color: #28a745; /* Green */
-    border-color: #28a745;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-}
-
-.btn-warning {
-    background-color: #fd7e14; /* Orange */
-    border-color: #fd7e14;
-}
-
-.btn-warning:hover {
-    background-color: #e96d08;
-    border-color: #e96d08;
-}
