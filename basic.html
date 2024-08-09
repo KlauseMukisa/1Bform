@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,23 +31,23 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#personal-info">
-                                <i class="fas fa-user"></i> Personal Information
+                            <a class="nav-link active" href="#background-info">
+                                <i class="fas fa-user"></i> Background Information
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#next-of-kin">
-                                <i class="fas fa-users"></i> Next of Kin Information
+                            <a class="nav-link" href="#physical-address">
+                                <i class="fas fa-map-marker-alt"></i> Physical Address
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#education-employment">
-                                <i class="fas fa-graduation-cap"></i> Education and Employment
+                            <a class="nav-link" href="#business-info">
+                                <i class="fas fa-briefcase"></i> Business Information
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#project-specific">
-                                <i class="fas fa-project-diagram"></i> Project-Specific Information
+                            <a class="nav-link" href="#core-business-training">
+                                <i class="fas fa-cogs"></i> Core Business Training
                             </a>
                         </li>
                         <li class="nav-item">
@@ -62,13 +60,13 @@
             </nav>
 
             <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div id="personal-info" class="form-section">
-                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                <div id="background-info" class="form-section">
+                    <h2><i class="fas fa-user"></i> Background Information</h2>
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="surname">Surname</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Enter surname"required>
+                                <input type="text" class="form-control" id="surname" placeholder="Enter surname" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="other-names">Other Names</label>
@@ -76,251 +74,335 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone-number">Phone Number</label>
+                            <label for="phone-number">Telephone Number(s)</label>
                             <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number">
                         </div>
                         <div class="form-group">
-                            <label for="gender">Gender</label>
-                            <select class="form-control" id="gender">
-                                <option value="" disabled selected>Select gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" placeholder="Enter age">
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="age">Age</label>
-                                <input type="number" class="form-control" id="age" placeholder="Enter age">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                <label class="form-check-label" for="male">Male</label>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="marital-status">Marital Status</label>
-                                <select class="form-control" id="marital-status">
-                                    <option value="" disabled selected>Select marital status</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
-                                    <option value="widowed">Widowed</option>
-                                </select>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="female">Female</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Are you a Ugandan or a refugee?</label>
+                            <label>Marital Status</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="ugandan" value="ugandan">
-                                <label class="form-check-label" for="ugandan">
-                                    Ugandan
-                                </label>
+                                <input class="form-check-input" type="radio" name="marital-status" id="single" value="single">
+                                <label class="form-check-label" for="single">Single</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status" id="refugee" value="refugee">
-                                <label class="form-check-label" for="refugee">
-                                    Refugee
-                                </label>
+                                <input class="form-check-input" type="radio" name="marital-status" id="married" value="married">
+                                <label class="form-check-label" for="married">Married</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="marital-status" id="divorced" value="divorced">
+                                <label class="form-check-label" for="divorced">Divorced</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="marital-status" id="separated" value="separated">
+                                <label class="form-check-label" for="separated">Separated</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="marital-status" id="widowed" value="widowed">
+                                <label class="form-check-label" for="widowed">Widowed</label>
                             </div>
                         </div>
-                        <div id="refugee-info" class="form-group" style="display: none;">
-                            <label for="refugee-number">Enter Refugee Number</label>
-                            <input type="text" class="form-control" id="refugee-number" placeholder="Enter refugee number">
+                        <div class="form-group">
+                            <label for="email">Email Address (Optional)</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
                         </div>
-                        <div id="nin-info" class="form-group" style="display: none;">
-                            <label for="nin">Enter NIN</label>
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nationality" id="ugandan" value="ugandan">
+                                <label class="form-check-label" for="ugandan">Ugandan</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nationality" id="refugee" value="refugee">
+                                <label class="form-check-label" for="refugee">Refugee</label>
+                            </div>
+                        </div>
+                        <div id="ugandan-info" class="form-group" style="display: none;">
+                            <label for="nin">National Identification Number (NIN)</label>
                             <input type="text" class="form-control" id="nin" placeholder="Enter NIN">
                         </div>
-                    </form>
-                </div>
-
-                <div id="next-of-kin" class="form-section" style="display: none;">
-                    <h2><i class="fas fa-users"></i> Next of Kin Information</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="kin-name">Name</label>
-                            <input type="text" class="form-control" id="kin-name" placeholder="Enter next of kin's name">
-                        </div>
-                        <div class="form-group">
-                            <label for="kin-phone">Telephone Number</label>
-                            <input type="tel" class="form-control" id="kin-phone" placeholder="Enter telephone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="kin-alternative-phone">Alternative Number (Optional)</label>
-                            <input type="tel" class="form-control" id="kin-alternative-phone" placeholder="Enter alternative number">
-                        </div>
-                        <div class="form-group">
-                            <label for="kin-relationship">Relationship</label>
-                            <input type="text" class="form-control" id="kin-relationship" placeholder="Enter relationship">
+                        <div id="refugee-info" class="form-group" style="display: none;">
+                            <label for="refugee-number">Refugee Number</label>
+                            <input type="text" class="form-control" id="refugee-number" placeholder="Enter refugee number">
                         </div>
                     </form>
                 </div>
 
-                <div id="education-employment" class="form-section" style="display: none;">
-                    <h2><i class="fas fa-graduation-cap"></i> Education and Employment</h2>
+                <div id="physical-address" class="form-section">
+                    <h2><i class="fas fa-map-marker-alt"></i> Physical Address</h2>
+                    <form>
+                        <div id="refugee-address" class="form-group" style="display: none;">
+                            <label for="refugee-settlement">Refugee Settlement</label>
+                            <input type="text" class="form-control" id="refugee-settlement" placeholder="Enter refugee settlement">
+                        </div>
+                        <div id="ugandan-address" class="form-group" style="display: none;">
+                            <h4>Full Residential Address/Location</h4>
+                            <div class="form-group">
+                                <label for="district">District/City</label>
+                                <input type="text" class="form-control" id="district" placeholder="Enter district/city">
+                            </div>
+                            <div class="form-group">
+                                <label for="subcounty">Subcounty/Division</label>
+                                <input type="text" class="form-control" id="subcounty" placeholder="Enter subcounty/division">
+                            </div>
+                            <div class="form-group">
+                                <label for="parish">Parish/Ward</label>
+                                <input type="text" class="form-control" id="parish" placeholder="Enter parish/ward">
+                            </div>
+                            <div class="form-group">
+                                <label for="village">Village/Cell/Zone</label>
+                                <input type="text" class="form-control" id="village" placeholder="Enter village/cell/zone">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="business-info" class="form-section">
+                    <h2><i class="fas fa-briefcase"></i> Business Information</h2>
                     <form>
                         <div class="form-group">
-                            <label for="education">Highest Level of Education</label>
-                            <select class="form-control" id="education">
-                                <option value="primary">Primary</option>
-                                <option value="secondary">Secondary</option>
-                                <option value="diploma">Diploma</option>
-                                <option value="bachelor">Bachelor's</option>
-                                <option value="master">Master's</option>
-                                <option value="phd">PhD</option>
-                                <option value="other">Other</option>
+                            <label for="business-name">Name of the Business</label>
+                            <input type="text" class="form-control" id="business-name" placeholder="Enter business name">
+                        </div>
+                        <div class="form-group">
+                            <label for="year-establishment">Year of Business Establishment</label>
+                            <input type="date" class="form-control" id="year-establishment">
+                        </div>
+                        <div class="form-group">
+                            <label for="business-type">Type of Business</label>
+                            <select id="business-type" class="form-control">
+                                <option value="">Choose an item</option>
+                                <option value="retail">Retail</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="tourism">Tourism</option>
+                                <option value="construction">Construction</option>
+                                <option value="education">Education</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="information-technology">Information Technology</option>
+                                <option value="financial-services">Financial Services</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="wholesale">Wholesale</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="energy">Energy</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="telecommunications">Telecommunications</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="textiles">Textiles</option>
+                                <option value="pharmaceuticals">Pharmaceuticals</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="mining">Mining</option>
+                                <option value="forestry">Forestry</option>
+                                <option value="beverage">Beverage</option>
+                                <option value="food-processing">Food Processing</option>
+                                <option value="real-estate-development">Real Estate Development</option>
+                                <option value="sports">Sports</option>
+                                <option value="arts-and-culture">Arts and Culture</option>
+                                <option value="non-profit">Non-Profit</option>
+                                <option value="government">Government</option>
+                                <option value="legal-services">Legal Services</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="media">Media</option>
+                                <option value="clean-energy">Clean Energy</option>
+                                <option value="e-commerce">E-Commerce</option>
+                                <option value="aerospace">Aerospace</option>
+                                <option value="marine">Marine</option>
+                                <!-- Add more options as needed -->
                             </select>
+                            
                         </div>
                         <div class="form-group">
-                            <label for="institution">Name of the Institution Last Attended</label>
-                            <input type="text" class="form-control" id="institution" placeholder="Enter name of institution">
-                        </div>
-                        <div class="form-group">
-                            <label for="employment-status">Current Employment Status</label>
-                            <select class="form-control" id="employment-status">
-                                <option value="" disabled selected>Select employment status</option>
-                                <option value="employed">Employed</option>
-                                <option value="self-employed">Self-employed</option>
-                                <option value="unemployed">Unemployed</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="occupation">Occupation (if applicable)</label>
-                            <input type="text" class="form-control" id="occupation" placeholder="Enter occupation">
-                        </div>
-                        <div class="form-group">
-                            <label for="salary">Monthly Salary (if employed)</label>
-                            <input type="number" class="form-control" id="salary" placeholder="Enter monthly salary">
-                        </div>
-                        <div class="form-group">
-                            <label>Are you currently operating a business?</label>
+                            <label>Annual Revenue Generated by the Business</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="business-status" id="yes-business" value="yes">
-                                <label class="form-check-label" for="yes-business">
-                                    Yes
-                                </label>
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue1" value="< 1,000,000">
+                                <label class="form-check-label" for="revenue1">Less than 1,000,000</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="business-status" id="no-business" value="no">
-                                <label class="form-check-label" for="no-business">
-                                    No
-                                </label>
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue2" value="1,000,000-5m">
+                                <label class="form-check-label" for="revenue2">1,000,000-5M</label>
                             </div>
-                        </div>
-                        <div id="business-details" class="form-group" style="display: none;">
-                            <label for="business-sector">State the Sector of Business</label>
-                            <input type="text" class="form-control" id="business-sector" placeholder="Enter business sector">
-                        </div>
-                        <div id="number-of-employees" class="form-group" style="display: none;">
-                            <label for="employees">Number of Employees</label>
-                            <input type="number" class="form-control" id="employees" placeholder="Enter number of employees">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue3" value="5M-10M">
+                                <label class="form-check-label" for="revenue3">5M-10M</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue4" value="10M-20M">
+                                <label class="form-check-label" for="revenue4">10M-20M</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue5" value="20M-50M">
+                                <label class="form-check-label" for="revenue5">20M-50M</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue6" value="50M-100M">
+                                <label class="form-check-label" for="revenue6">50M-100M</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue7" value="100M-360M">
+                                <label class="form-check-label" for="revenue7">100M-360M</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="annual-revenue" id="revenue8" value="Above 360M">
+                                <label class="form-check-label" for="revenue8">Above 360M</label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>Have you acquired any business training before?</label>
+                            <label for="business-location">Business Location/Address</label>
+                            <input type="text" class="form-control" id="business-location" placeholder="Enter business location/address">
+                        </div>
+                        <div class="form-group">
+                            <label>Is Your Business Registered?</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="training-status" id="yes-training" value="yes">
-                                <label class="form-check-label" for="yes-training">
-                                    Yes
-                                </label>
+                                <input class="form-check-input" type="radio" name="business-registered" id="registered-yes" value="yes">
+                                <label class="form-check-label" for="registered-yes">Yes</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="training-status" id="no-training" value="no">
-                                <label class="form-check-label" for="no-training">
-                                    No
-                                </label>
+                                <input class="form-check-input" type="radio" name="business-registered" id="registered-no" value="no">
+                                <label class="form-check-label" for="registered-no">No</label>
                             </div>
                         </div>
-                        <div id="training-program" class="form-group" style="display: none;">
-                            <label for="program">State the Program that Offered the Business Training</label>
-                            <input type="text" class="form-control" id="program" placeholder="Enter training program">
+                        <div id="registration-number" class="form-group" style="display: none;">
+                            <label for="reg-number">Registration Number</label>
+                            <input type="text" class="form-control" id="reg-number" placeholder="Enter registration number">
                         </div>
-                        <div id="skills-obtained" class="form-group" style="display: none;">
-                            <label for="skills">State Skills Obtained from the Training</label>
-                            <input type="text" class="form-control" id="skills" placeholder="Enter skills obtained">
+                        <div id="reason-not-registered" class="form-group" style="display: none;">
+                            <label for="registration-reason">Reason for Not Registering</label>
+                            <textarea class="form-control" id="registration-reason" rows="3" placeholder="Enter reason for not registering"></textarea>
                         </div>
                     </form>
                 </div>
 
-
-                <div id="project-specific" class="form-section" style="display: none;">
-                    <h2><i class="fas fa-project-diagram"></i> Project-Specific Information</h2>
+                <div id="core-business-training" class="form-section">
+                    <h2><i class="fas fa-cogs"></i> Core Business Training</h2>
                     <form>
                         <div class="form-group">
-                            <label for="project-title">How did you know about GROW Project?</label>
-                            <input type="text" class="form-control" id="project-title" placeholder="Enter how you got to know about this project">
+                            <label>Challenges Faced in Business</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="finance" value="finance">
+                                <label class="form-check-label" for="finance">Access to Finance</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="market-access" value="market-access">
+                                <label class="form-check-label" for="market-access">Market Access</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="technology" value="technology">
+                                <label class="form-check-label" for="technology">Technology Adoption</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="business-skills" value="business-skills">
+                                <label class="form-check-label" for="business-skills">Business Skills</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="regulatory-compliance" value="regulatory-compliance">
+                                <label class="form-check-label" for="regulatory-compliance">Regulatory Compliance</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="business-challenges" id="other-challenges" value="other">
+                                <label class="form-check-label" for="other-challenges">Other</label>
+                                <input type="text" class="form-control mt-2" id="other-challenges-text" placeholder="Specify other challenges">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="project-description">Reason for applying for this program:</label>
-                            <textarea class="form-control" id="project-description" rows="4" placeholder="enter reason for applying for this program"></textarea>
+                            <label>Specific Areas of Interest for Training (Course Modules)</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="mindset" value="mindset">
+                                <label class="form-check-label" for="mindset">Entrepreneurial Mindset</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="marketing" value="marketing">
+                                <label class="form-check-label" for="marketing">Marketing Strategies</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="operations" value="operations">
+                                <label class="form-check-label" for="operations">Operations Management</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="finance-management" value="finance-management">
+                                <label class="form-check-label" for="finance-management">Financial Management</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="business-planning" value="business-planning">
+                                <label class="form-check-label" for="business-planning">Business Planning</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="digital-skills" value="digital-skills">
+                                <label class="form-check-label" for="digital-skills">Digital Skills</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="training-modules" id="other-modules" value="other">
+                                <label class="form-check-label" for="other-modules">Other</label>
+                                <input type="text" class="form-control mt-2" id="other-modules-text" placeholder="Specify other modules">
+                            </div>
                         </div>
-                      
                     </form>
                 </div>
 
-                <div id="confirmation" class="form-section" style="display: none;">
+                <div id="confirmation" class="form-section">
                     <h2><i class="fas fa-check-circle"></i> Confirmation</h2>
                     <form>
                         <div class="form-group">
-                            <label for="declaration">I, <input type="text" class="form-control d-inline-block w-auto" id="declaration-name" placeholder="Enter your name">, declare that the information provided above is true and accurate to the best of my knowledge.</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="confirmation-check" required>
+                                <label class="form-check-label" for="confirmation-check">
+                                    I declare that the information provided is true and accurate.
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    
-                    <button type="button" class="btn btn-primary" id="submit-btn">Submit all and finish</button>
-                </div>
-
-                <div class="form-navigation mt-4">
-                    <button type="button" class="btn btn-outline-secondary prev-btn" style="display: none;">Previous</button>
-                    <button type="button" class="btn btn-success next-btn">Continue</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="basic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function () {
-            var sections = $('.form-section');
-            var currentSectionIndex = 0;
-
-            function showSection(index) {
-                sections.hide();
-                $(sections[index]).show();
-                $('.prev-btn').toggle(index > 0);
-                $('.next-btn').toggle(index < sections.length - 1);
-                $('#submit-btn').toggle(index === sections.length - 1);
-            }
-
-            function showAlertAndNext() {
-                Swal.fire({
-                    title: 'Section Completed!',
-                    text: 'Proceeding to the next section.',
-                    icon: 'success',
-                    confirmButtonText: 'Continue'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        currentSectionIndex++;
-                        showSection(currentSectionIndex);
-                    }
-                });
-            }
-
-            $('.next-btn').click(showAlertAndNext);
-
-            $('.prev-btn').click(function () {
-                if (currentSectionIndex > 0) {
-                    currentSectionIndex--;
-                    showSection(currentSectionIndex);
-                }
+        // JavaScript to handle form visibility based on nationality
+        document.querySelectorAll('input[name="nationality"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.getElementById('ugandan-info').style.display = document.getElementById('ugandan').checked ? 'block' : 'none';
+                document.getElementById('refugee-info').style.display = document.getElementById('refugee').checked ? 'block' : 'none';
+                document.getElementById('refugee-address').style.display = document.getElementById('refugee').checked ? 'block' : 'none';
+                document.getElementById('ugandan-address').style.display = document.getElementById('ugandan').checked ? 'block' : 'none';
             });
+        });
 
-            showSection(currentSectionIndex);
+        document.querySelectorAll('input[name="business-registered"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.getElementById('registration-number').style.display = document.getElementById('registered-yes').checked ? 'block' : 'none';
+                document.getElementById('reason-not-registered').style.display = document.getElementById('registered-no').checked ? 'block' : 'none';
+            });
+        });
+
+        // Handle SweetAlert for form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Form Submitted',
+                text: 'Your application has been submitted successfully!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                // Redirect or move to next section if needed
+            });
         });
     </script>
 </body>
